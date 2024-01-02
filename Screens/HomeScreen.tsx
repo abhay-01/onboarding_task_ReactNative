@@ -8,7 +8,7 @@ import { removeItem } from '../utils/asyncStorage';
 export default function HomeScreen() {
     const navigation = useNavigation();
     return (
-        <SafeAreaView className="flex flex-1">
+        <SafeAreaView className="flex flex-1 bg-[#E8F7E3]">
             <Text>HomeScreen</Text>
             <TouchableOpacity onPress={async () => {
                 navigation.navigate('OnboardingScreen');
@@ -23,7 +23,7 @@ export default function HomeScreen() {
 
 
             <View className="flex flex-1 items-center justify-center">
-                <View className="w-[100%] h-[70] bg-[#fff] flex-row mt-[auto]">
+                <View className="w-[100%] h-[70] bg-[#fff] flex-row mt-[auto] rounded-t-3xl border border-2">
                     <TouchableOpacity className="w-[33%] h-[100%] justify-center items-center"
                         onPress={() => navigation.navigate("HomeScreen")}>
                         <Image source={require('../assets/home.png')}

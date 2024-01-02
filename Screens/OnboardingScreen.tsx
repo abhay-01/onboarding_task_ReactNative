@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Onboarding from 'react-native-onboarding-swiper';
-import Lottie from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { setItem } from '../utils/asyncStorage';
@@ -81,8 +81,11 @@ export default function OnboardingScreen() {
                     {
                         backgroundColor: '#DFF7E3',
                         image: (
-                            <View className="h-[400] w-[300]">
-                                <Lottie source={require('../assets/animations/build-2.json')} />
+                            <View style = {{
+                                height:width,
+                                width:width*0.9
+                            }}>
+                                <LottieView style = {{flex:1}} source={require('../assets/animations/Animation - 1704180260001.json')} autoPlay loop/>
                             </View>
                         ),
                         title: 'Onboarding',
@@ -91,8 +94,11 @@ export default function OnboardingScreen() {
                     {
                         backgroundColor: '#C8E6C9',
                         image: (
-                            <View className="h-[400] w-[300]">
-                                <Lottie source={require('../assets/animations/building.json')} />
+                            <View style = {{
+                                height:width,
+                                width:width*0.9
+                            }}>
+                                <LottieView style = {{flex:1}} source={require('../assets/animations/building.json')} autoPlay loop/>
                             </View>
                         ),
                         title: 'Hello',
@@ -101,8 +107,11 @@ export default function OnboardingScreen() {
                     {
                         backgroundColor: '#A5D6A7',
                         image: (
-                            <View className="h-[400] w-[300]">
-                                <Lottie source={require('../assets/animations/Animation - 1704180260001.json')} />
+                            <View style = {{
+                                height:width,
+                                width:width*0.9
+                            }}>
+                                <LottieView style = {{flex:1}} source={require('../assets/animations/Animation - 1704180260001.json')} autoPlay loop/>
                             </View>
                         ),
                         title: 'Onboarding',
