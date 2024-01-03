@@ -14,12 +14,12 @@ export default function OnboardingScreen() {
     const navigation = useNavigation();
 
     const handleSkip = () => {
-        navigation.navigate('HomeScreen');
+        navigation.navigate('SignupScreen');
         setItem('onboarded', 'true');
     }
 
     const handleDone = () => {
-        navigation.navigate('HomeScreen');
+        navigation.navigate('SignupScreen');
         setItem('onboarded', 'true');
     }
 

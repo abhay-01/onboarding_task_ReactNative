@@ -3,8 +3,8 @@ import { Text, View } from 'react-native'
 
 export default function Total() {
   return (
-    <view>
+    <View>
         <Text>Branch</Text>
-    </view>
+    </View>
   )
 }
