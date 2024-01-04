@@ -66,45 +66,44 @@ export default function Model() {
     <SafeAreaView>
       <ScrollView>
         <View style={{ padding: 10 }}>
-          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>One Unit Area</Text>
+          <Text className = "text-lg font-bold mb-[10]">One Unit Area</Text>
           <TextInput
-            style={{ borderWidth: 1, borderColor: '#000', padding: 10, marginBottom: 10 }}
+            className = "border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
             placeholder="No Default Unit Area"
             onChangeText={(text) => setModelData({ ...modelData, one_unit_area: text })}
           />
-          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>One Plate Area</Text>
+          <Text className = "text-lg font-bold mb-[10]">One Plate Area</Text>
           <TextInput
-            style={{ borderWidth: 1, borderColor: '#000', padding: 10, marginBottom: 10 }}
+            className = "border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
             placeholder="No Default Unit Area"
             onChangeText={(text) => setModelData({ ...modelData, one_plate_area: text })}
           />
-          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Total Covered Area</Text>
+          <Text className = "text-lg font-bold mb-[10]">Total Covered Area</Text>
           <TextInput
-            style={{ borderWidth: 1, borderColor: '#000', padding: 10, marginBottom: 10 }}
+            className = "border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
             placeholder="No Default Unit Area"
             onChangeText={(text) => setModelData({ ...modelData, total_covered_area: text })}
           />
-          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Land Share Unit</Text>
+          <Text className = "text-lg font-bold mb-[10]">Land Share Unit</Text>
           <TextInput
-            style={{ borderWidth: 1, borderColor: '#000', padding: 10, marginBottom: 10 }}
+            className = "border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
             placeholder="No Defau;t Unit Area"
             onChangeText={(text) => setModelData({ ...modelData, land_share_unit: text })}
           />
-          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Floor No</Text>
+          <Text className = "text-lg font-bold mb-[10]">Floor No</Text>
           <TextInput
-            style={{ borderWidth: 1, borderColor: '#000', padding: 10, marginBottom: 10 }}
+            className = "border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
             placeholder="No Default Floor No"
             onChangeText={(text) => setModelData({ ...modelData, floor_no: text })}
           />
 
 
-          <TouchableOpacity
-            style={{ backgroundColor: '#F15C22', padding: 10, borderRadius: 10, marginBottom: 10 }}
+          <TouchableOpacity className = "bg-[#F15C22] p-[10] rounded-md mb-[10]"
             onPress={()=>handleSaveInfo()}
           >
             <Text style={{ color: '#fff', textAlign: 'center' }}>Save Info</Text>

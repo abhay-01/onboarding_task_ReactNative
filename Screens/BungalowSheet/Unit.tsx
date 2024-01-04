@@ -18,7 +18,6 @@ const priceCalculatorSchema = z.object({
 });
 
 export default function Unit() {
-
   const navigation = useNavigation();
   const route = useRoute();
   const projectData = route.params?.projectData;
@@ -37,50 +36,26 @@ export default function Unit() {
     additional_land_area: "",
   });
 
-  const [formErrors, setFormErrors] = React.useState<ZodError | null>(null);
-  const [calculatedPrice, setCalculatedPrice] = React.useState<string | null>(null);
   const [facing, setFacing] = React.useState<string | null>(null);
-
-  const calculatePrice = (data: {
-    adjustment_factor: string,
-    filling_depth: string,
-    floor_level: string,
-    corner_factor: string,
-    facing_factor: string,
-    additional_builtup_area: string,
-    additional_land_area: string,
-  }): number => {
-    const adjustment_factor = parseFloat(data.adjustment_factor);
-    const filling_depth = parseFloat(data.filling_depth);
-    const floor_level = parseFloat(data.floor_level);
-    const corner_factor = parseFloat(data.corner_factor);
-    const facing_factor = parseFloat(data.facing_factor);
-    const additional_builtup_area = parseFloat(data.additional_builtup_area);
-    const additional_land_area = parseFloat(data.additional_land_area);
-
-
-    return (
-      adjustment_factor * filling_depth * floor_level * corner_factor * facing_factor * additional_builtup_area * additional_land_area
-    )
-  }
-
+  const [formErrors, setFormErrors] = React.useState<ZodError | null>(null);
 
   const handleSaveInfo = () => {
+
     try {
-      priceCalculatorSchema.parse(projectData);
+      priceCalculatorSchema.parse(unitData);
       console.log("Validation successful. Data:", unitData);
-      navigation.navigate('Total', { projectData, branchData, modelData, companyData, unitData });
+      navigation.navigate('Total', { unitData, companyData, modelData, branchData, projectData });
     } catch (error) {
       setFormErrors(error);
-      console.error("Validation failed. Error:", error);
+      console.log("Validation failed. Error:", error);
     }
   }
 
   const handlePress = (facing: string, factor: string) => {
     setFacing(facing)
     setUnitData({ ...unitData, facing_factor: factor })
-  }
 
+  }
 
 
   return (
@@ -158,7 +133,7 @@ export default function Unit() {
           </View>
 
           <Text className="text-lg font-bold mb-[10]">Additional/semi-finished Builtup Area
-</Text>
+          </Text>
           <TextInput
             className="border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
@@ -167,7 +142,7 @@ export default function Unit() {
           />
 
           <Text className="text-lg font-bold mb-[10]">Additional Land Area
-</Text>
+          </Text>
           <TextInput
             className="border border-1 border-black p-[10] mb-[10]"
             keyboardType="numeric"
