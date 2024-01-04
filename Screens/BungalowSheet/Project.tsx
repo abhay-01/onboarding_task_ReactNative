@@ -106,12 +106,11 @@ export default function Project() {
       <ScrollView>
         <View className="p-[10]">
           <Text  className = "text-lg font-bold mb-[10]">Purchase Land Rate</Text>
-          <TextInput
+          <Text
             className = "border border-1 border-black p-[10] mb-[10]"
-            keyboardType="numeric"
-            placeholder="Enter Purchase Land Rate"
-            onChangeText={(text) => setProjectData({ ...projectData, purchase_land_rate: text })}
-          />
+          >
+            {parseFloat(projectData?.land_sell_factor)*(parseFloat(projectData?.current_land_rate) + parseFloat(projectData?.purchase_land_rate)) + parseFloat(projectData?.development_charge) +parseFloat(projectData?.legal_charge)}
+          </Text>
 
           <Text  className = "text-lg font-bold mb-[10]">Current Land Rate</Text>
           <TextInput
