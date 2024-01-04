@@ -1,9 +1,11 @@
 import React from 'react'
 import { Text, View, ScrollView, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaView } from 'react-native';
 import { z, ZodError } from 'zod'
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
+import { Button } from './CVAcomponent/button';
+import Dialog from './CVAcomponent/Dialog';
 
 
 const priceCalculatorSchema = z.object({
@@ -176,10 +178,20 @@ const priceCalculatorSchema = z.object({
           <Text className="text-xl font-bold">Grand Total: </Text>
           <Text className="text-md mt-[5]">{grand_total ? grand_total : "0"}</Text>
         </View>
+       <View className = "flex items-center mt-[14] bg-neutral-400 w-[60%] justify-center h-[34] ml-14 rounded-lg">
+        <Button
+        size ="large"
+        intent="primary"
+        onPress ={()=>console.log("save")}
+        >
+          <Text className ="text-lg">
+            Save 
+          </Text>
+        </Button>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-
 
 export default Total;
