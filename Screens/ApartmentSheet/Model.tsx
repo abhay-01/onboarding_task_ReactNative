@@ -103,7 +103,8 @@ export default function Model() {
           />
 
 
-          <TouchableOpacity className = "bg-[#F15C22] p-[10] rounded-md mb-[10]"
+          <TouchableOpacity className = "bg-[#F15C22] p-[10] rounded-[10] mb-[10]"
+            style={{ backgroundColor: '#F15C22', padding: 10, borderRadius: 10, marginBottom: 10 }}
             onPress={()=>handleSaveInfo()}
           >
             <Text style={{ color: '#fff', textAlign: 'center' }}>Save Info</Text>
